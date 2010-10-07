@@ -1,0 +1,26 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3269
+
+Note this script need clipboard supported 
+
+http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+
+specifically, it use the * register to get the text in the clipboard
+
+this little script define a function call OpenFilesFromClipboard()
+
+If you, for example, execute some command from the terminal (maybe a grep) and get result like this:
+
+/Users/me/myfile:23:something something
+/Users/me/anotherfile: 34 I am a file
+/Users/me/yetanotherone hello
+
+what you can do with this plugin is: highlight the text and copy it into your system clipboard (Cmd-c in MacOSX and Ctrl-c in Windows)
+
+Assuming you have a mapping in your .vimrc
+map <LEADER>jc :call OpenFilesFromClipboard()
+
+then open your vim and type <LEADER>jc will open that each file into a new tab
+I hard code to tabnew for now, check back later version for more flexibility
+
+Note:
+ just reallize that support different program on different environment is impossible. If it works for you, great, otherwise, please read the code, the idea and code it up for your usage
